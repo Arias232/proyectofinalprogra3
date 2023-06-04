@@ -1,0 +1,134 @@
+<div class="row">
+  <app-barra-lateral></app-barra-lateral>
+  <p></p>
+  <div class="col-2">
+  </div>
+  <div class="col">
+
+    <form [formGroup]="addressForm" novalidate (ngSubmit)="onSubmit()">
+      <mat-card class="shipping-card">
+        <mat-card-header>
+          <mat-card-title>Ingrese un nuevo vehículo</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+
+          <div class="row">
+            <div class="col">
+              <mat-form-field class="full-width">
+                <input matInput placeholder="Ingrese el name" formControlName="Nombre" [(ngModel)]="Vehiculo.nombre">
+                <mat-error *ngIf="addressForm.controls['Nombre'].hasError('required')">
+                  NOMBRE ES <strong>REQUERIDO</strong>
+                </mat-error>
+              </mat-form-field>
+            </div>
+          </div>
+          <div class="row">
+           
+            <div class="col">
+              <mat-form-field class="full-width">
+                <input matInput placeholder="Ingrese el marca" formControlName="Marca" [(ngModel)]="Vehiculo.marca">
+                <mat-error *ngIf="addressForm.controls['Marca'].hasError('required')">
+                  MARCA ES <strong>REQUERIDO</strong>
+                </mat-error>
+              </mat-form-field>
+            </div>
+
+          </div>
+
+          <div class="row">
+            <div class="col">
+              <mat-form-field class="full-width">
+                <input matInput placeholder="Ingrese el modelo" formControlName="Modelo" [(ngModel)]="Vehiculo.modelo">
+                <mat-error *ngIf="addressForm.controls['Modelo'].hasError('required')">
+                  MODELO ES <strong>REQUERDIO</strong>
+                </mat-error>
+              </mat-form-field>
+            </div>
+          </div>
+          <div class="row">
+           
+            <div class="col">
+              <mat-form-field class="full-width">
+                <input matInput placeholder="Ingrese el placa" formControlName="Placa" [(ngModel)]="Vehiculo.placa">
+                <mat-error *ngIf="addressForm.controls['Placa'].hasError('required')">
+                  PLACA ES <strong>REQUERIDO</strong>
+                </mat-error>
+              </mat-form-field>
+            </div>
+
+          </div>
+
+          <div class="row">
+           
+            <div class="col">
+              <mat-form-field class="full-width">
+                <input matInput placeholder="Ingrese el average" formControlName="Average" [(ngModel)]="Vehiculo.average">
+                <mat-error *ngIf="addressForm.controls['Average'].hasError('required')">
+                  AVERAGE ES <strong>REQUERIDO</strong>
+                </mat-error>
+              </mat-form-field>
+            </div>
+
+          </div>
+
+          <div class="col">
+            <mat-form-field class="full-width">
+              <mat-hint>YYYY/MM/DD</mat-hint>
+              <input matInput placeholder="Ingrese la createAt" formControlName="CreateAt" [(ngModel)]="Vehiculo.createAt">
+              <mat-error *ngIf="addressForm.controls['CreateAt'].hasError('required')">
+                CREATE ES <strong>REQUERIDO</strong>
+              </mat-error>
+            </mat-form-field>
+          </div>
+
+          <div class="row">
+            <div class="col">
+              <mat-form-field class="full-width">
+                <input matInput placeholder="Ingresa la hora" formControlName="Hora" [(ngModel)]="Vehiculo.precio">
+                <mat-error *ngIf="addressForm.controls['Precio'].hasError('required')">
+                  PRECIO ES <strong>REQUERIDO</strong>
+                </mat-error>
+              </mat-form-field>
+            </div>
+          </div>
+   
+
+
+          <div class="row">
+            <div class="col">
+              <mat-form-field class="full-width">
+                <input matInput placeholder="Ingrese el precio" formControlName="Precio" [(ngModel)]="Vehiculo.precio">
+                <mat-error *ngIf="addressForm.controls['Precio'].hasError('required')">
+                  PRECIO ES <strong>REQUERIDO</strong>
+                </mat-error>
+              </mat-form-field>
+            </div>
+          </div>
+   
+
+
+
+        </mat-card-content>
+        <mat-card-actions>
+
+        </mat-card-actions>
+      </mat-card>
+    </form>
+
+  </div>
+
+  <div class="row">
+    <div class="col-2">
+    </div>
+    <div class="col-2">
+      <button mat-raised-button class="btn btn-success" type="submit" (click)="agregar()">Guardar</button>
+    </div>
+    <div class="col-2">
+      <button mat-raised-button class="btn btn-danger" type="submit" (click)="Oneliminar(Vehiculo.nombre)">Eliminar
+        Registro</button>
+    </div>
+    <div class="col-2">
+      <button mat-raised-button class="btn btn-info" type="submit" (click)="Onvehiculo()">Mostrar Tabla</button>
+    </div>
+  </div>
+</div>
